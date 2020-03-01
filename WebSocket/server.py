@@ -5,6 +5,7 @@ import websockets
 async def send_message(websocket, path):
     while True:
         message = input()
+        # sending the message from input
         await websocket.send(message)
         await asyncio.sleep(random.random() * 5)
 
