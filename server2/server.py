@@ -18,5 +18,9 @@ def sendMessage() :
     
     return (message)
 
+@app.route('/receive2', methods=['POST'])
+def receiveMessage() :
+    return ("OK")
+
 if __name__== '__main__' :
     app.run(debug=True, port=8083)

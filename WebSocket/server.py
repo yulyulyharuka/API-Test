@@ -6,7 +6,7 @@ async def send_message(websocket, path):
     while True:
         message = input()
         await websocket.send(message)
-        await asyncio.sleep(random.random() * 3)
+        await asyncio.sleep(random.random() * 5)
 
 start_server = websockets.serve(send_message, "127.0.0.1", 8082)
 

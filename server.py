@@ -21,20 +21,20 @@ def send_message() :
     
 @app.route('/getmessage', methods=['GET'])
 def save_message() :
-    send_data = {}
-    send_data["name"] = "admin"
+    send_data = "Test"
 
-    r = requests.post("http://127.0.0.1:8083/receive", data=send_data)
+    today = datetime.now()
+    time = datetime.now().time()
+    timestamp = str(today) + " " + str(time)
+    r = requests.post("http://127.0.0.1:8083/receive2", data=send_data)
     if (r.status_code == 200) :
-        today = datetime.now()
-        time = datetime.now().time()
-        timestamp = str(today) + " " + str(time)
-
         # saving the message to list of message
         messages['message'].append((timestamp, send_data))
         return (messages)
     else :
-        return ("failed to send message")
-        
+        message = "failed to send message"
+        messages['message'].append((timestamp, message))
+        return (messages)
+
 if __name__== '__main__' :
     app.run(debug=True, port=8082)
