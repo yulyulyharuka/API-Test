@@ -1,6 +1,6 @@
 # API-Test
 
-## 1. API for sending a message Just send one parameter string for message After sending should be get response (REST)
+## 1. API for sending a message using one parameter
 ### Requirements
 1. Python 3.7
 2. flask
